@@ -38,7 +38,7 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-const token = "EAAKvwWuKUtwBADStcGKbPgZCcZBfb0sOlfhQI7bZCzcqf19YnU9KhPqId3HlUCPGJ8K8HPFwAcvtTioTlWZCMdYZCSgLg53lZA4bmKfaUGFoXZAPhJYvpnevaPlpr3gcs9WlmOU33CVglXmTU7vAka75kQJ1DLo9siB5O8v1D6CQQZDZD"
+const token = "EAAKvwWuKUtwBAGgKmSjlCZCjbWBU7rnh2W8oHzZCU0XFQ0djdfbLC0IRyLj1xSLG65GZA1J0665aLVpbHOcFwaLlbUfXkYyXwMFwZAKxrVRimHlfKKF9lKZAG05zyTn4cZBBCXKJ7vvZCJs0gEVpPq4aAhuuHS840245GurrnMqmQZDZD"
 
 // Spin up the server
 app.listen(app.get('port'), function() {
