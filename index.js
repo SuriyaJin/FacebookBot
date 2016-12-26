@@ -19,7 +19,7 @@ app.get('/webhook/', function (req, res) {
 
 
 
-const token = "EAAKvwWuKUtwBAKxCF8ynI1AIxMRp4qEI5jZAkvN7zOE72GlwiQodLAiCSstsoGYIazkpfBhZBpZCyTrSYmAF6By0tPuWIZAYPG9gy5VVuRVVunXqDDalq6v1dffTwrC3E2XkolyvjbkzzZCYhkZBkoDGPy3kH4Gg1a94ySIDTmlwZDZD"
+const token = "EAAKvwWuKUtwBAEgdhZBdgZC155uaUknJ1My7yOo2CtaQcAG9MZAqRq1ErLZARM7KZBylAv5TZADkBQ2XsEPtXDUyXTn9GNAc92jZAtaxfb3EytJ43aEQunCQZB7IWlVjtGRXyQBFH2Bp8pURSu8XOzLRWQZBu4kcUZBySAcZCQQEH5JFwZDZD"
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
