@@ -22,13 +22,13 @@ app.get('/webhook/', function (req, res) {
 
 const token = "EAAKvwWuKUtwBAEgdhZBdgZC155uaUknJ1My7yOo2CtaQcAG9MZAqRq1ErLZARM7KZBylAv5TZADkBQ2XsEPtXDUyXTn9GNAc92jZAtaxfb3EytJ43aEQunCQZB7IWlVjtGRXyQBFH2Bp8pURSu8XOzLRWQZBu4kcUZBySAcZCQQEH5JFwZDZD"
 function GetResponse(sender, text){
-  let messageData={};
+  let messageData={}
   var conversation = new ConversationV1({
     username: '9183e35a-31b4-46d0-b18d-fb0d69285026',
     password: 'xZvXbh5oh5qN',
     version_date: ConversationV1.VERSION_DATE_2016_09_20
   });
-  //console.log(text);
+  console.log(text);
   conversation.message({
     input: { text: text },
     workspace_id:'b6a4828f-9ed6-4199-b453-45cf642593e1'
@@ -47,7 +47,7 @@ function GetResponse(sender, text){
 function sendTextMessage(sender, text) {
 
     let messageData = { text:text }
-     //console.log( text);
+     console.log( messageData);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
