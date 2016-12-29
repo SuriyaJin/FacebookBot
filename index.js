@@ -40,7 +40,7 @@ function GetResponse(sender, text){
          messageData={text:response["output"]["text"][0].toString()}
        }
   });
-  while ((typeof myVar === 'string' || myVar instanceof String)) {
+  while ((typeof messageData === 'string' || messageData instanceof String)) {
     if(messageData!=undefined){
       sendTextMessage(sender,messageData);
     }
