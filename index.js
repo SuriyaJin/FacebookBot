@@ -40,13 +40,15 @@ function GetResponse(sender, text){
          messageData={text:response["output"]["text"][0].toString()}
        }
   });
-  sendTextMessage(sender,messageData);
+  if(messageData!=undefined){
+    sendTextMessage(sender,messageData);
+  }
 }
 function sendTextMessage(sender, text) {
 
     //let messageData = { text:text }
     let messageData = {text:text};
-    console.log("messageData: "+ messageData["text"]);
+    console.log("messageData: "+ messageData);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
