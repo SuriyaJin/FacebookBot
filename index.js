@@ -21,7 +21,7 @@ app.get('/webhook/', function (req, res) {
 
 
 const token = "EAAKvwWuKUtwBAEgdhZBdgZC155uaUknJ1My7yOo2CtaQcAG9MZAqRq1ErLZARM7KZBylAv5TZADkBQ2XsEPtXDUyXTn9GNAc92jZAtaxfb3EytJ43aEQunCQZB7IWlVjtGRXyQBFH2Bp8pURSu8XOzLRWQZBu4kcUZBySAcZCQQEH5JFwZDZD"
-function GetResponse(sender, text){
+/*function GetResponse(sender, text){
   let messageData={};
   var conversation = new ConversationV1({
     username: '9183e35a-31b4-46d0-b18d-fb0d69285026',
@@ -43,18 +43,18 @@ function GetResponse(sender, text){
   });
   //console.log("message:" + messageData);
       sendTextMessage(sender,messageData);
-  }
+  }*/
 function sendTextMessage(sender, text) {
 
-    //let messageData = { text:text }
-     console.log( text);
+    let messageData = { text:text }
+     //console.log( text);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
         method: 'POST',
         json: {
             recipient: {id:sender},
-            message: text,
+            message: messageData,
         }
     }, function(error, response, body) {
         if (error) {
@@ -127,7 +127,7 @@ app.post('/webhook/', function (req, res) {
             sendGenericMessage(sender)
             continue
         }
-        GetResponse(sender,text.substring(0, 200))
+        sendTextMessage(sender,text.substring(0, 200))
       }
       if (event.postback) {
         let text = JSON.stringify(event.postback)
