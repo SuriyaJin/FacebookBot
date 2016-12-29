@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
     res.send('Hello world, I am a chat bot');
 })
+
+
+
 app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
         res.send(req.query['hub.challenge']);
@@ -28,7 +31,6 @@ function GetResponse(sender, text){
     password: 'xZvXbh5oh5qN',
     version_date: ConversationV1.VERSION_DATE_2016_09_20
   });
-  //console.log(text);
   conversation.message({
     input: { text: text },
     workspace_id:'b6a4828f-9ed6-4199-b453-45cf642593e1'
@@ -36,18 +38,16 @@ function GetResponse(sender, text){
        if (err) {
          messageData=err;
        } else {
-          console.log(response["output"]["text"][0]);
          sendTextMessage(sender,response["output"]["text"][0]);
-         //messageData=text;
        }
   });
-  //console.log("message:" + messageData);
-      //sendTextMessage(sender,messageData);
   }
+
+
+
 function sendTextMessage(sender, text) {
 
     let messageData = { text:text }
-     //console.log( messageData);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
