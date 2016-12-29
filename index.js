@@ -28,7 +28,7 @@ function GetResponse(sender, text){
     password: 'xZvXbh5oh5qN',
     version_date: ConversationV1.VERSION_DATE_2016_09_20
   });
-  console.log(text);
+  //console.log(text);
   conversation.message({
     input: { text: text },
     workspace_id:'b6a4828f-9ed6-4199-b453-45cf642593e1'
