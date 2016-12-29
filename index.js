@@ -40,9 +40,7 @@ function GetResponse(sender, text){
          messageData={text:response["output"]["text"][0].toString()}
        }
   });
-    if(typeof messageData == 'string'){
       sendTextMessage(sender,messageData);
-    }
   }
 function sendTextMessage(sender, text) {
 
