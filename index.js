@@ -22,7 +22,7 @@ app.get('/webhook/', function (req, res) {
 
 const token = "EAAKvwWuKUtwBAEgdhZBdgZC155uaUknJ1My7yOo2CtaQcAG9MZAqRq1ErLZARM7KZBylAv5TZADkBQ2XsEPtXDUyXTn9GNAc92jZAtaxfb3EytJ43aEQunCQZB7IWlVjtGRXyQBFH2Bp8pURSu8XOzLRWQZBu4kcUZBySAcZCQQEH5JFwZDZD"
 function GetResponse(sender, text){
-  var messageData="";
+  //var messageData="";
   var conversation = new ConversationV1({
     username: '9183e35a-31b4-46d0-b18d-fb0d69285026',
     password: 'xZvXbh5oh5qN',
@@ -37,16 +37,16 @@ function GetResponse(sender, text){
          messageData=err;
        } else {
           console.log(response["output"]["text"][0]);
-         messageData=response["output"]["text"][0];
+         sendTextMessage(sender,response["output"]["text"][0]);
          //messageData=text;
        }
   });
   //console.log("message:" + messageData);
-      sendTextMessage(sender,messageData);
+      //sendTextMessage(sender,messageData);
   }
 function sendTextMessage(sender, text) {
 
-    //let messageData = { text:text }
+    let messageData = { text:text }
      //console.log( messageData);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -54,7 +54,7 @@ function sendTextMessage(sender, text) {
         method: 'POST',
         json: {
             recipient: {id:sender},
-            message: text,
+            message: messageData,
         }
     }, function(error, response, body) {
         if (error) {
