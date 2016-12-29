@@ -23,7 +23,7 @@ app.get('/webhook/', function (req, res) {
 
 
 
-const token = "EAAKvwWuKUtwBAEgdhZBdgZC155uaUknJ1My7yOo2CtaQcAG9MZAqRq1ErLZARM7KZBylAv5TZADkBQ2XsEPtXDUyXTn9GNAc92jZAtaxfb3EytJ43aEQunCQZB7IWlVjtGRXyQBFH2Bp8pURSu8XOzLRWQZBu4kcUZBySAcZCQQEH5JFwZDZD"
+const token = "EAAFCyO2pJmkBAHr0uCZCEB1s41cdTx9AAPkplZBphZBuontD2wkwTMtlVmshTmahfjpBZCV93fsJYfdgCZArjqQZAmy2z5xPtlOEwwchn8ooeEFcoFUskinT82yj2iAZCsckPG9Y7aL1rCa17Dr1ZB6L9bNG9NBrCCH1Ux3mscX1BwZDZD"
 function GetResponse(sender, text){
   //var messageData="";
   var conversation = new ConversationV1({
