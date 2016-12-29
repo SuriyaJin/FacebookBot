@@ -40,6 +40,7 @@ function GetResponse(sender, text){
          messageData={text:response["output"]["text"][0].toString()}
        }
   });
+  console.log("message:" + messageData);
       sendTextMessage(sender,messageData);
   }
 function sendTextMessage(sender, text) {
