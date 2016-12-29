@@ -42,7 +42,7 @@ function sendTextMessage(sender, text) {
            messageData={text:response["output"]["text"][0].toString()}
          }
     });
-    console.log("messageData: "+ messageData);
+    console.log("messageData: "+ messageData["text"]);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
