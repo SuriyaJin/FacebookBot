@@ -39,7 +39,7 @@ function sendTextMessage(sender, text) {
            messageData={text:err}
          } else {
            console.log(response["output"]["text"][0]);
-           messageData={text:response["output"]["text"][0].tostring()}
+           messageData={text:response["output"]["text"][0].toString()}
          }
     });
     console.log("messageData: "+ messageData);
