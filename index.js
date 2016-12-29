@@ -4,11 +4,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const ConversationV1 = require('watson-developer-cloud/conversation/v1');
-var conversation = new ConversationV1({
-  username: '9183e35a-31b4-46d0-b18d-fb0d69285026',
-  password: 'xZvXbh5oh5qN',
-  version_date: ConversationV1.VERSION_DATE_2016_09_20
-})
 const app = express()
 app.set('port', (process.env.PORT || 3000));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,8 +25,12 @@ const token = "EAAKvwWuKUtwBAEgdhZBdgZC155uaUknJ1My7yOo2CtaQcAG9MZAqRq1ErLZARM7K
 function sendTextMessage(sender, text) {
   let messageData=""
     //let messageData = { text:text }
-
-
+    var conversation = new ConversationV1({
+      username: '9183e35a-31b4-46d0-b18d-fb0d69285026',
+      password: 'xZvXbh5oh5qN',
+      version_date: ConversationV1.VERSION_DATE_2016_09_20
+    });
+    console.log(text);
     conversation.message({
       input: { text: text },
       workspace_id:'b6a4828f-9ed6-4199-b453-45cf642593e1'
@@ -39,10 +38,11 @@ function sendTextMessage(sender, text) {
          if (err) {
            messageData={text:err}
          } else {
+           console.log(response["output"]["text"][0]);
            messageData={text:response["output"]["text"][0]}
          }
-    })
-
+    });
+    console.log("messageData: "+ messageData);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
@@ -57,7 +57,7 @@ function sendTextMessage(sender, text) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-    })
+    });
 }
 
 
