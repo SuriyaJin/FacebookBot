@@ -3,7 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-const ConversationV1 = require('watson-developer-cloud/conversation/v1');
+var ConversationV1 = require('watson-developer-cloud/conversation/v1');
 const app = express()
 app.set('port', (process.env.PORT || 3000));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -39,7 +39,7 @@ function sendTextMessage(sender, text) {
            messageData={text:err}
          } else {
            console.log(response["output"]["text"][0]);
-           messageData={text:response["output"]["text"][0]}
+           messageData={text:response["output"]["text"][0].tostring()}
          }
     });
     console.log("messageData: "+ messageData);
