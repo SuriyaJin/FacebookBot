@@ -37,7 +37,8 @@ function GetResponse(sender, text){
          messageData={text:err}
        } else {
         // console.log(response["output"]["text"][0]);
-         messageData={text:response["output"]["text"][0].toString()}
+         //messageData={text:response["output"]["text"][0].toString()}
+         messageData={text:"hi i'm jarvis"}
        }
   });
   //console.log("message:" + messageData);
