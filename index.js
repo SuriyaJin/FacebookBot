@@ -38,7 +38,7 @@ function GetResponse(sender, text){
        } else {
         // console.log(response["output"]["text"][0]);
          //messageData={text:response["output"]["text"][0].toString()}
-         messageData={text:"hi i'm jarvis"}
+         messageData={text:text}
        }
   });
   //console.log("message:" + messageData);
@@ -47,7 +47,7 @@ function GetResponse(sender, text){
 function sendTextMessage(sender, text) {
 
     //let messageData = { text:text }
-     console.log("messageData: " + text);
+     console.log( text);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
