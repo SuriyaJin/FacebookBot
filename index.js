@@ -36,9 +36,9 @@ function GetResponse(sender, text){
        if (err) {
          messageData=err;
        } else {
-        // console.log(response["output"]["text"][0]);
-         //messageData={text:response["output"]["text"][0].toString()}
-         messageData=text;
+          console.log(response["output"]["text"][0]);
+         messageData=response["output"]["text"][0];
+         //messageData=text;
        }
   });
   //console.log("message:" + messageData);
@@ -46,7 +46,7 @@ function GetResponse(sender, text){
   }
 function sendTextMessage(sender, text) {
 
-    let messageData = { text:text }
+    //let messageData = { text:text }
      //console.log( messageData);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -54,7 +54,7 @@ function sendTextMessage(sender, text) {
         method: 'POST',
         json: {
             recipient: {id:sender},
-            message: messageData,
+            message: text,
         }
     }, function(error, response, body) {
         if (error) {
