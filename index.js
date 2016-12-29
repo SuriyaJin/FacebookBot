@@ -40,13 +40,13 @@ function GetResponse(sender, text){
          messageData={text:response["output"]["text"][0].toString()}
        }
   });
-  console.log("message:" + messageData);
+  //console.log("message:" + messageData);
       sendTextMessage(sender,messageData);
   }
 function sendTextMessage(sender, text) {
 
     //let messageData = { text:text }
-  //    console.log("messageData: "+ messageData);
+     console.log("messageData: " + text);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
