@@ -27,13 +27,13 @@ const token = "EAAFCyO2pJmkBAHr0uCZCEB1s41cdTx9AAPkplZBphZBuontD2wkwTMtlVmshTmah
 function GetResponse(sender, text){
   //var messageData="";
   var conversation = new ConversationV1({
-    username: '9183e35a-31b4-46d0-b18d-fb0d69285026',
-    password: 'xZvXbh5oh5qN',
+    username: 'c3096497-5f08-4c2a-97c9-163ba205ca32',
+    password: '8Di4neBhHYYV',
     version_date: ConversationV1.VERSION_DATE_2016_09_20
   });
   conversation.message({
     input: { text: text },
-    workspace_id:'b6a4828f-9ed6-4199-b453-45cf642593e1'
+    workspace_id:'8541940c-3910-4d45-869d-5ab3fc27792b'
    }, function(err, response) {
        if (err) {
          messageData=err;
